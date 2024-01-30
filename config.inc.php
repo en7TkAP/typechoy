@@ -34,8 +34,14 @@ require_once 'Typecho/Common.php';
 Typecho_Common::init();
 
 /** 定义数据库参数 */
-$db = new Typecho_Db('Pdo_SQLite', 'typecho_');
+$db = new Typecho_Db('Pdo_PostgreSQL', 'typecho_');
 $db->addServer(array (
-  'file' => 'usr/typecho.db',
+  'host' => 'ep-fragrant-queen-a45la97m-pooler.us-east-1.postgres.vercel-storage.com',
+  'user' => 'default',
+  'password' => 'HQMdFEy6W9um',
+  'charset' => 'utf8mb4',
+  'port' => '5432',
+  'database' => 'verceldb',
+  'engine' => 'MyISAM',
 ), Typecho_Db::READ | Typecho_Db::WRITE);
 Typecho_Db::set($db);
