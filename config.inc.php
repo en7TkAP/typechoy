@@ -34,14 +34,14 @@ require_once 'Typecho/Common.php';
 Typecho_Common::init();
 
 /** 定义数据库参数 */
-$db = new Typecho_Db('Pdo_PostgreSQL', 'typecho_');
+$db = new Typecho_Db('Pdo_MySQL', 'typecho_');
 $db->addServer(array (
-  'host' => 'ep-fragrant-queen-a45la97m-pooler.us-east-1.postgres.vercel-storage.com',
-  'user' => 'default',
-  'password' => 'HQMdFEy6W9um',
+  'host' => 'sql.freedb.tech:3306/freedb_verceltypeche',
+  'user' => 'freedb_wetype',
+  'password' => 'w!bRyh#fbUTJbG9',
   'charset' => 'utf8mb4',
-  'port' => '5432',
-  'database' => 'verceldb',
+  'port' => '3306',
+  'database' => 'freedb_verceltypeche',
   'engine' => 'MyISAM',
 ), Typecho_Db::READ | Typecho_Db::WRITE);
 Typecho_Db::set($db);
