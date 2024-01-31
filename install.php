@@ -1,5 +1,21 @@
 <?php
 
+// 定义文件夹路径
+$dir = "/usr/uploads";
+
+// 检查文件夹是否存在
+if (!is_dir($dir)) {
+    // 如果文件夹不存在，则创建它
+    mkdir($dir, 0777, true);
+} else {
+    // 如果文件夹存在，则检查其权限
+    $perms = fileperms($dir);
+    if (($perms & 0777) != 0777) {
+        // 如果文件夹的权限不是可写，则更改它的权限
+        chmod($dir, 0777);
+    }
+}
+
 if (!file_exists(dirname(__FILE__) . '/config.inc.php')) {
     // site root path
     define('__TYPECHO_ROOT_DIR__', dirname(__FILE__));
